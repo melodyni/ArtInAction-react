@@ -8,7 +8,11 @@ const postReq = (url, data) => {
 
 const reqAPI = {};
 
-reqAPI.authUrl = () => fetch(`/auth/init`).then((res) => res.json());
+const jsonParse = (res) => res.json();
+
+reqAPI.authUrl = () => fetch(`/auth/init`).then(jsonParse);
+reqAPI.userInfo = () => fetch(`/api/userInfo`).then(jsonParse);
+reqAPI.isLoggedIn = () => fetch(`/api/isLoggedIn`).then(jsonParse);
 reqAPI.register = (userInfo) => postReq(`/api/register`, userInfo);
 
 export default reqAPI;
