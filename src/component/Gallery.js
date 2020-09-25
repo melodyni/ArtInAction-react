@@ -15,16 +15,16 @@ import '../App.css';
 
 const Gallery = function () {
   const history = useHistory();
-  const [artWorks, SetArtWorks] = useState([]);
-  const [name, setName] = useState('');
-  const [avatar, setAvatar] = useState('');
+  const [artWorks, setArtWorks] = useState([]);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    reqAPI.artWork().then(({ username, avatar, artWorks }) => {
-      setName(username);
-      setAvatar(avatar);
-      SetArtWorks(artWorks);
-    });
+    reqAPI
+      .artWork()
+      .then(({ id, name, username, avatar, email, bio, artWorks }) => {
+        setUser({ id, username, name, avatar, email, bio });
+        setArtWorks(artWorks);
+      });
   }, []);
 
   const categories = Array.from(new Set(artWorks.map((x) => x.tags).flat()));
@@ -47,7 +47,7 @@ const Gallery = function () {
 
   return (
     <BrowserRouter>
-      <TitleBar avatar={avatar} name={name} />
+      <TitleBar user={user} />
       <div className='inline'>
         <NavLink to='/gallery/all' activeClassName='activeLink'>
           all

@@ -11,7 +11,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       .isLoggedIn()
       .then(setUser)
       .then(() => setLoaded(true));
-  }, [user]);
+  }, []);
 
   if (loaded) {
     return (

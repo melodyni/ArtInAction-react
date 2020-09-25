@@ -1,6 +1,7 @@
 import React from 'react';
 import Welcome from '../component/Welcome';
 import Gallery from '../component/Gallery';
+import ZoomedImage from '../component/ZoomedImage';
 import RegistrationForm from '../component/RegistrationForm';
 import AddArtForm from '../component/AddArtForm';
 import PrivateRoute from '../Routes/PrivateRoutes';
@@ -15,7 +16,11 @@ const App = () => {
         <Route exact path='/addArt' component={AddArtForm} />
         <PrivateRoute exact path='/' component={Gallery} />
         <PrivateRoute exact path='/gallery/:category' component={Gallery} />
-        <PrivateRoute exact path='/image/:id' component={Image} />
+        <PrivateRoute
+          exact
+          path='/image/:name/:title'
+          component={ZoomedImage}
+        />
       </Switch>
     </BrowserRouter>
   );

@@ -4,7 +4,8 @@ import logout from '../Icons/logout.svg';
 import '../App.css';
 import { useHistory } from 'react-router-dom';
 
-const TitleBar = function ({ avatar, name }) {
+const TitleBar = function ({ user }) {
+  const { avatar, username } = user;
   const history = useHistory();
 
   const handleClick = () => {
@@ -15,8 +16,13 @@ const TitleBar = function ({ avatar, name }) {
     <div className='inline titleBar'>
       <span className='large-font'>Art In Action</span>
       <div className='user'>
-        <span className='large-font'>{name}</span>
-        <img src={avatar} alt='avatar' className='avatar' />
+        <span className='large-font'>{username}</span>
+        <img
+          src={avatar}
+          alt='avatar'
+          className='avatar'
+          onClick={() => useHistory.push('/profile/id')}
+        />
         <img src={logout} alt='logout' className='icon' onClick={handleClick} />
       </div>
     </div>
