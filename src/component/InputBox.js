@@ -12,7 +12,9 @@ const InputBox = ({ type, onChange, label }) => {
   return (
     <div>
       <label>{label}</label>
-      <input onChange={handleChange} type={type} value={value} />
+      <div>
+        <input onChange={handleChange} type={type} value={value} required />
+      </div>
     </div>
   );
 };

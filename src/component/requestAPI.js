@@ -8,11 +8,10 @@ const postReq = (url, data) => {
 
 const reqAPI = {};
 
-const jsonParse = (res) => res.json();
+reqAPI.authUrl = () => fetch(`/auth/init`).then((res) => res.json());
+reqAPI.artWork = () => fetch(`/api/artWork`).then((res) => res.json());
+reqAPI.isLoggedIn = () => fetch(`/api/isLoggedIn`).then((res) => res.json());
+reqAPI.register = (userInfo) => postReq(`api/register`, userInfo);
 
-reqAPI.authUrl = () => fetch(`/auth/init`).then(jsonParse);
-reqAPI.userInfo = () => fetch(`/api/userInfo`).then(jsonParse);
-reqAPI.isLoggedIn = () => fetch(`/api/isLoggedIn`).then(jsonParse);
-reqAPI.register = (userInfo) => postReq(`/api/register`, userInfo);
-
+reqAPI.logout = () => fetch(`/api/logout`);
 export default reqAPI;

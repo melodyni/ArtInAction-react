@@ -13,8 +13,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       .then(() => setLoaded(true));
   }, []);
 
-  console.log(user, loaded);
-
   if (loaded) {
     return (
       <Route
@@ -23,7 +21,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
           user.isLoggedIn ? (
             <Component {...props} user={user} />
           ) : (
-            <Redirect to='/' />
+            <Redirect to='/login' />
           )
         }
       ></Route>

@@ -1,3 +1,44 @@
+.navbar {
+  width: 30vw;
+}
+
+.img-card {
+  height: 44vh;
+  border: rgb(235, 232, 232) solid 1px;
+  background-color: #fbfbfb;
+  border-radius: 1%;
+  margin: 1vh;
+}
+
+.img-card > img {
+  border: 1px solid whitesmoke;
+  margin: 0.5vh;
+  height: 33vh;
+}
+
+.tags {
+  color: #3c88fb;
+}
+
+.welcome {
+  background-image: url('./Icons/back.jpg');
+  background-size: cover;
+  text-align: center;
+  height: 800px;
+  padding: 20vh;
+}
+
+.preview,
+.preview > img {
+  margin: 0.3vh 0.3vh 1vh 0.3vh;
+  height: 32vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
 .center {
   text-align: center;
 }
@@ -5,12 +46,15 @@
 .inline {
   display: flex;
   justify-content: space-between;
-  margin: 1vh 2vh;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1vh 2vw;
 }
 
 .titleBar {
-  margin: 1vh 2vh 1vh 2vh;
-  border-bottom: 4px solid #282c34;
+  background-color: #eaeaf6;
 }
 
 .user {
@@ -21,8 +65,7 @@
 .avatar {
   height: 4.5vh;
   width: 4.5vh;
-  margin: 0.5vh 1vh;
-  border: 2px solid gainsboro;
+  margin: 0.7vh 1vh;
   border-radius: 50%;
 }
 
@@ -32,11 +75,57 @@
   margin: 1vh;
 }
 
-h1 {
-  margin: 0;
-  padding: 0;
+.btn {
+  border: none;
   margin: 1vh;
-  margin-top: 0.5vh;
+  padding: 0.5vh 2vh;
+  font-size: 3vh;
+  font-weight: 500;
+}
+
+.blue {
+  color: white;
+  background-color: #42acd8;
+}
+
+.red {
+  color: white;
+  background-color: #ec5050;
+}
+
+.activeLink {
+  /* border: black 1px solid; */
+  color: green;
+}
+
+form {
+  width: 20vw;
+}
+
+input,
+textarea {
+  padding: 0.5vh;
+  margin: 0.5vh 0 1.5vh 1vh;
+  width: 73%;
+}
+
+label {
+  margin: 0vh 1vh;
+}
+
+.titleBar > {
+  margin: 0.5vh 1vh;
+  font-weight: 500;
+}
+
+.large-font {
+  font-size: 4vh;
+  margin: 0.5vh 1vw;
+}
+
+.small-font {
+  font-size: 2vh;
+  margin: 0.5vh 1vw;
 }
 
 .App {

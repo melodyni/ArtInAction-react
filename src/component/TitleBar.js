@@ -1,26 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import reqAPI from './requestAPI';
 import logout from '../Icons/logout.svg';
 import '../App.css';
+import { useHistory } from 'react-router-dom';
 
-const TitleBar = function () {
-  const [name, setName] = useState('');
-  const [avatar, setAvatar] = useState('');
+const TitleBar = function ({ avatar, name }) {
+  const history = useHistory();
 
-  useEffect(() => {
-    reqAPI.userInfo().then(({ username, avatar }) => {
-      setName(username);
-      setAvatar(avatar);
-    });
-  }, []);
+  const handleClick = () => {
+    reqAPI.logout().then(() => history.push('/'));
+  };
 
   return (
     <div className='inline titleBar'>
-      <h1>Art In Action</h1>
+      <span className='large-font'>Art In Action</span>
       <div className='user'>
-        <h1>{name}</h1>
+        <span className='large-font'>{name}</span>
         <img src={avatar} alt='avatar' className='avatar' />
-        <img src={logout} alt='logout' className='icon' />
+        <img src={logout} alt='logout' className='icon' onClick={handleClick} />
       </div>
     </div>
   );

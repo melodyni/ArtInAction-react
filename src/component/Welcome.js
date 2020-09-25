@@ -4,18 +4,16 @@ import '../App.css';
 
 const Welcome = function () {
   const [url, setLink] = useState('');
-  const name = `Art in Action`;
-  const description = `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Ut enim ad minim "`;
-
   useEffect(() => {
     reqAPI.authUrl().then(({ url }) => setLink(url));
   }, []);
 
   return (
-    <div className='center'>
-      <h1>{name}</h1>
-      <h3>{description}</h3>
-      <button onClick={() => (window.location.href = url)}>
+    <div className='welcome '>
+      <h1>Art in Action</h1>
+      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </h3>
+      <h3>sed do eiusmod tempor Ut enim ad minim</h3>
+      <button onClick={() => (window.location.href = url)} className='btn blue'>
         Login With Google
       </button>
     </div>

@@ -10,10 +10,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path='/' component={Welcome} />
+        <Route exact path='/login' component={Welcome} />
         <Route exact path='/register' component={RegistrationForm} />
         <Route exact path='/addArt' component={AddArtForm} />
-        <PrivateRoute exact path='/gallery' component={Gallery} />
+        <PrivateRoute exact path='/' component={Gallery} />
+        <PrivateRoute exact path='/gallery/:category' component={Gallery} />
+        <PrivateRoute exact path='/image/:id' component={Image} />
       </Switch>
     </BrowserRouter>
   );
