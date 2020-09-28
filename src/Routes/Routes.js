@@ -16,11 +16,7 @@ const App = () => {
         <Route exact path='/addArt' component={AddArtForm} />
         <PrivateRoute exact path='/' component={Gallery} />
         <PrivateRoute exact path='/gallery/:category' component={Gallery} />
-        <PrivateRoute
-          exact
-          path='/image/:name/:title'
-          component={ZoomedImage}
-        />
+        <Route exact path='/image/:name/:title' component={ZoomedImage} />
       </Switch>
     </BrowserRouter>
   );

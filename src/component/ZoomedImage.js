@@ -1,14 +1,22 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import '../App.css';
+import back from '../Icons/left-arrow.svg';
 
 const ZoomedImage = function () {
+  const history = useHistory();
   const { name, title } = useParams();
-  console.log(name);
   return (
-    <div className='zoomed-img'>
-      <div className='side-panel '>{title}</div>
-      <img src={`/api/images/${name}`} alt={name} />
+    <div>
+      <img
+        src={back}
+        className='icon'
+        onClick={() => history.push('/gallery/all')}
+      />
+      <div className='zoomed-img'>
+        <div className='side-panel '>{title}</div>
+        <img src={`/api/images/${name}`} alt={name} />
+      </div>
     </div>
   );
 };

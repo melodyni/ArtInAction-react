@@ -38,8 +38,14 @@ const AddArtForm = () => {
         <img src={imageUrl} alt='preview' />
       </div>
       <form onSubmit={handleSubmit}>
-        <label>Image</label>
-        <input type='file' name='image' onChange={handleChange} required />
+        <label htmlFor='img'>Image</label>
+        <input
+          id='img'
+          type='file'
+          name='image'
+          onChange={handleChange}
+          required
+        />
         <br />
         <InputBox type='text' label='Title' onChange={setTitle} />
         <InputBox type='text' label='Tags' onChange={setTags} />

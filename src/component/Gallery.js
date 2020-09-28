@@ -7,7 +7,6 @@ import {
   Switch,
   useHistory,
 } from 'react-router-dom';
-
 import AllImageCard from './AllImageCard';
 import FilteredImageCard from './FilteredImageCard';
 import reqAPI from './requestAPI';
@@ -49,15 +48,15 @@ const Gallery = function () {
     <BrowserRouter>
       <TitleBar user={user} />
       <div className='inline'>
-        <NavLink to='/gallery/all' activeClassName='activeLink'>
-          all
-        </NavLink>
-        {links}
+        <div className='links'>
+          <NavLink to='/gallery/all' activeClassName='activeLink'>
+            all
+          </NavLink>
+          {links}
+        </div>
         <button className='btn blue' onClick={() => history.push('/addArt')}>
           Add Art
         </button>
-        {/* <button className='btn blue'></button> */}
-        {/* <Link to='/addArt' className='btn blue'>Add Art</Link> */}
       </div>
 
       <Switch>
