@@ -11,6 +11,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <PrivateRoute exact path='/' component={Gallery} />
         <Route exact path='/login' component={Welcome} />
         <Route path='/register' component={RegistrationForm} />
         <Route exact path='/addArt' component={AddArtForm} />
