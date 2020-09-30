@@ -12,11 +12,10 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path='/login' component={Welcome} />
-        <Route exact path='/register' component={RegistrationForm} />
+        <Route path='/register' component={RegistrationForm} />
         <Route exact path='/addArt' component={AddArtForm} />
-        <PrivateRoute exact path='/' component={Gallery} />
-        <PrivateRoute exact path='/gallery/:category' component={Gallery} />
-        <Route exact path='/image/:name/:title' component={ZoomedImage} />
+        <PrivateRoute path='/gallery/:category' component={Gallery} />
+        <Route path='/image/:name/:title' component={ZoomedImage} />
       </Switch>
     </BrowserRouter>
   );

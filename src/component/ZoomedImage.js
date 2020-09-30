@@ -10,6 +10,7 @@ const ZoomedImage = function () {
     <div>
       <img
         src={back}
+        alt='ZoomedImage'
         className='icon'
         onClick={() => history.push('/gallery/all')}
       />

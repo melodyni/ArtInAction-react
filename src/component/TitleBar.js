@@ -9,7 +9,7 @@ const TitleBar = function ({ user }) {
   const history = useHistory();
 
   const handleClick = () => {
-    reqAPI.logout().then(() => history.push('/'));
+    reqAPI.logout().then(() => history.push('/login'));
   };
 
   return (

@@ -11,6 +11,6 @@ const reqAPI = {};
 reqAPI.authUrl = () => fetch(`/auth/init`).then((res) => res.json());
 reqAPI.artWork = () => fetch(`/api/artWork`).then((res) => res.json());
 reqAPI.isLoggedIn = () => fetch(`/api/isLoggedIn`).then((res) => res.json());
-reqAPI.register = (userInfo) => postReq(`api/register`, userInfo);
+reqAPI.register = (userInfo) => postReq(`/api/registerUser`, userInfo);
 reqAPI.logout = () => fetch(`/api/logout`);
 export default reqAPI;

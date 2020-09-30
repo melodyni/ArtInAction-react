@@ -8,6 +8,8 @@ const Welcome = function () {
     reqAPI.authUrl().then(({ url }) => setLink(url));
   }, []);
 
+  console.log(url);
+
   return (
     <div className='welcome '>
       <h1>Art in Action</h1>

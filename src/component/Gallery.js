@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TitleBar from './TitleBar';
-import {
-  BrowserRouter,
-  NavLink,
-  Route,
-  Switch,
-  useHistory,
-} from 'react-router-dom';
+import { NavLink, Route, Switch, useHistory } from 'react-router-dom';
+
 import AllImageCard from './AllImageCard';
 import FilteredImageCard from './FilteredImageCard';
 import reqAPI from './requestAPI';
@@ -45,7 +40,7 @@ const Gallery = function () {
   ));
 
   return (
-    <BrowserRouter>
+    <div>
       <TitleBar user={user} />
       <div className='inline'>
         <div className='links'>
@@ -65,7 +60,7 @@ const Gallery = function () {
         </Route>
         {routes}
       </Switch>
-    </BrowserRouter>
+    </div>
   );
 };
 
